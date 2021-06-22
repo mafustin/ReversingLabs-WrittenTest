@@ -37,9 +37,12 @@
   }
   
   .card{
+    padding-top: 15px;
+    padding-bottom: 15px;
     width: 50%;
     background: #e7e7e7;
-    height: 40vh;
+    /*height: 40vh;*/
+    height: auto;
     margin: 50px auto;
     border-radius: 2px;
   }

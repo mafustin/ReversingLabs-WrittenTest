@@ -5,6 +5,9 @@ var main = document.querySelector('#name');
 var temp = document.querySelector('.temp');
 var desc = document.querySelector('.desc');
 var clouds = document.querySelector('.clouds');
+var pressure = document.querySelector('.pressure')
+var longitude = document.querySelector(".longitude");
+var latitude = document.querySelector(".latitude");
 var button= document.querySelector('.submit');
 
 
@@ -22,12 +25,17 @@ function getTemperature () {
     var tempValue = (data['main']['temp'] - 273).toFixed(1);
     var nameValue = data['name'];
     var descValue = data['weather'][0]['description'];
-    
+    var pressureValue = data['main']['pressure'];
+    var longitudeValue = data['coord']['lon'];
+    var latitudeValue = data['coord']['lat'];
   
     main.innerHTML = nameValue;
     desc.innerHTML = "Desc - "+input1.value;
-    temp.innerHTML = "Current temperature in Zagreb is "+tempValue + "°C";
+    temp.innerHTML = "Current temperature in " + nameValue + " is "+tempValue + "°C";
     clouds.innerHTML = "Today it is mostly "+ descValue;
+    pressure.innerHTML = "Pressure: "+ pressureValue +" Hpa";
+    longitude.innerHTML = "Longitude: " + longitudeValue;
+    latitude.innerHTML = "Latitude: " + latitudeValue;
 
     input.value ="";
     input1.value="";
